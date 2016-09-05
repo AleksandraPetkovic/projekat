@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<?php echo $this->headTitle('PROJECT NAME')->setSeparator(' | ');?>
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!-- @todo: fill with your company info or remove -->
-		<?php echo $this->headMeta();?>
-		<!-- General CSS -->
-		
-		<?php echo $this->headLink();?>
-		<!-- Theme  CSS -->
-		
-		<?php echo $this->headStyle();?>
-		
-		<?php echo $this->headScript();?>
-	</head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <?php echo $this->headTitle('Make up studio')->setSeparator(' | '); ?>
 
-	<!-- ======== @Region: body ======== -->
-	<body>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- @todo: fill with your company info or remove -->
+        <?php echo $this->headMeta(); ?>
+        <!-- General CSS -->
 
-		<?php echo $this->layout()->content;?>
-		
-		<!--Scripts -->
-		<?php echo $this->inlineScript();?>
-	</body>
+        <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,600italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900,900italic,300italic' rel='stylesheet' type='text/css'>
+        <link href="css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+        <link href="css/owl.theme.css" rel="stylesheet" type="text/css"/>
+        <link href="css/image-switcher.css" rel="stylesheet" type="text/css"/>
+        <link href="css/responsive.css" rel="stylesheet" type="text/css"/>
+
+        <?php echo $this->headLink(); ?>
+        <!-- Theme  CSS -->
+
+        <?php echo $this->headStyle(); ?>
+
+        <?php echo $this->headScript(); ?>
+    </head>
+
+    <!-- ======== @Region: body ======== -->
+    <body>
+
+        <?php echo $this->layout()->content; ?>
+
+        <!--Scripts -->
+        <?php echo $this->inlineScript(); ?>
+    </body>
 
 </html>
