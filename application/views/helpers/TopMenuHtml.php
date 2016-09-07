@@ -12,7 +12,7 @@ class Zend_View_Helper_TopMenuHtml extends Zend_View_Helper_Abstract {
                 'status' => Application_Model_DbTable_CmsSitemapPages::STATUS_ENABLED
             ),
             'order' => array(
-                'order_number' => 'ASC'
+                'order_number' => 'DESC'
             )
         ));
         //resetovanje placeholder-a

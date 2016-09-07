@@ -108,23 +108,7 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                            <ul class="nav navbar-nav navbar-right  dropShop">
-                                <li><a href="#" class="text-uppercase">HOME</a></li>
-                                <li><a href="#" class="text-uppercase" data-toggle="modal" data-target="#myModal">PAGES</a></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        SHOP<span class="caret" style="color:#6cc513;"></span>
-                                    </a>
-                                    <ul class="dropdown-menu dropSpa">
-                                        <li><a href="#">SPA WOMEN</a></li>
-                                        <li><a href="#">SPA MEN</a></li>
-                                        <li><a href="#">SPA ALL</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#" class="text-uppercase">GALERY</a></li>
-                                <li><a href="#" class="text-uppercase">CONTACT</a></li>
-                                <li class="shopingCart"><a href="#"><span class="fa fa-shopping-cart"></span><span class="badge">02</span></a></li>
-                            </ul>
+                            <?php echo $this->topMenuHtml(); ?>
                         </div>
                         </div><!-- /.container-fluid -->
                 </nav>
@@ -223,27 +207,6 @@
                             </article>
                         </div>
                         <div class="col-md-2">
-                            <article>
-                                <h4>Shopping Info.</h4>
-                                <div class="smallLine"></div>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="#">Service</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Delivery</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Returns</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Gift Card</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Current Discount</a>
-                                    </li>
-                                </ul>
-                            </article>
                         </div>
                         <div class="col-md-2">
                             <article>
@@ -264,38 +227,6 @@
                                     </li>
                                     <li>
                                         <a href="#">FAQs</a>
-                                    </li>
-                                </ul>
-                            </article>
-                        </div>
-                        <div class="col-md-3">
-                            <article>
-                                <h4>Payment Methods</h4>
-                                <div class="smallLine"></div>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <p>
-                                            Connected with our social media and get update protidin
-                                        </p>
-                                    </li>
-                                    <li class="payment">
-                                        <a href="#">
-                                            <img src="front/img/maestro.png" alt=""/>
-                                        </a>
-                                        <a href="#">
-                                            <img src="front/img/paypal.png" alt=""/>
-                                        </a>
-                                        <a href="#">
-                                            <img src="img/american.png" alt=""/>
-                                        </a>
-                                    </li>
-                                    <li class="payment">
-                                        <a href="#">
-                                            <img src="front/img/visa.png" alt=""/>
-                                        </a>
-                                        <a href="#">
-                                            <img src="front/img/discover.png" alt=""/>
-                                        </a>
                                     </li>
                                 </ul>
                             </article>
