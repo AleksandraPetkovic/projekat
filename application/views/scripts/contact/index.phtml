@@ -2,9 +2,7 @@
 $sitemapPage = $this->sitemapPage;
 $this->headTitle($sitemapPage['title']);
 ?>
-
 <main>
-
             <!-- SECTION 1 "frid" -->
             <section class="frid clearfix">
                 <figure>
@@ -14,7 +12,7 @@ $this->headTitle($sitemapPage['title']);
                     <h3 class="text-uppercase text-center">ABOUT US</h3>
                     <ul class="breadcrumb list-inline text-uppercase text-center">
                         <li>
-                            <a href="#">Home</a>
+                            <a href="<?php echo $this->baseUrl('/'); ?>">Home</a>
                         </li>
                         <li>
                             <a href="#"> Shop</a>
@@ -63,33 +61,13 @@ $this->headTitle($sitemapPage['title']);
                                 </div>
                             </article>
                         </div>
-                        <div class="col-md-6 addrCon">
-                            <h4 class="text-uppercase">contact address</h4>
-                            <article class="contAddress">
-                                <div class="contact">
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <p class="map"><span class="fa fa-map-marker"></span>&nbsp; 123 West Street, Melbourne Victoria 3000 Australia</p>
-                                        </li>
-                                        <li>
-                                            <p class="map"><span class="fa fa-phone"></span>&nbsp; Phone : +061012345678 <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Fax : +006101234567</p>
-                                        </li>
-                                        <li>
-                                            <p class="map"><span class="fa fa-envelope"></span>&nbsp; 
-                                                <a href="mailto:Contact@yourename.com">Contact@yourename.com</a> <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                <a href="mailto:Support@yourname.com">Support@yourname.com</a>
-                                            </p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </article>
-                        </div>
+                        <?php echo $sitemapPage["body"];?>
+
                     </div>
                 </div>
             </section>
 
             <!-- SECTION 4 "gMaps" -->
             <section class="gMaps">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d48371.24948273937!2d-73.93035534680745!3d40.735556443668976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2srs!4v1469789242670" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </section>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d181139.35623527557!2d20.282170365642536!3d44.81540286862992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7aa3d7b53fbd%3A0x1db8645cf2177ee4!2sBelgrade%2C+Serbia!5e0!3m2!1sen!2srs!4v1473432024838" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>            </section>
         </main>

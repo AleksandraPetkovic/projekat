@@ -1,29 +1,27 @@
+<?php
+$this->headTitle('Services');
+?>
+
 <main>
     <!-- SECTION 8 "shipping" -->
     <section class="shipping">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
-                    <article>
-                        <span class="fa fa-truck"></span>
-                        <a href="#"><h5>FREE SHIPPING</h5></a>
-                        <p>Lorem ipsum dummy text here</p>
-                    </article>
-                </div>
-                <div class="col-sm-4">
-                    <article>
-                        <span class="fa fa-check-square"></span>
-                        <a href="#"><h5>MONEYBACK GUARANTEE</h5></a>
-                        <p>Lorem ipsum dummy text here</p>
-                    </article>
-                </div>
-                <div class="col-sm-4">
-                    <article>
-                        <span class="fa fa-headphones"></span>
-                        <a href="#"><h5>ONLINE SUPPORT</h5></a>
-                        <p>24/7 Lorem ipsum dummy support</p>
-                    </article>
-                </div>
+                <?php
+                foreach ($this->services as $service) {
+                        ?>
+                
+                <li class="col-md-4">
+                            <h3 class="title">  
+                                <i class="<?php echo $this->escape($service['icon']); ?> icon-small icon-inverse-80 _icon-circle"></i>
+                                <?php echo $this->escape($service['title']); ?>
+                            </h3>
+                            <p><?php echo $this->escape($service['description']); ?></p>
+                        </li>
+                
+                <?php
+                    }
+                ?>
             </div>
         </div>
     </section>

@@ -1,10 +1,10 @@
 <?php
 
-class Application_Form_Admin_MemberAdd extends Zend_Form
+class Application_Form_Admin_ProductAdd extends Zend_Form
 {
     public function init() {
         
-        $firstName = new Zend_Form_Element_Text('first_name');
+        $firstName = new Zend_Form_Element_Text('product');
         //$firstName->addFilter(new Zend_Filter_StringTrim());   isto sto i ovo dole
         //$firstName->addValidator(new Zend_Validate_StringLength(array('min' => 3, 'max' => 255)));
         
@@ -15,25 +15,7 @@ class Application_Form_Admin_MemberAdd extends Zend_Form
         $this->addElement($firstName);
         
         
-        $lastName = new Zend_Form_Element_Text('last_name');
-        $lastName->addFilter('StringTrim')
-                ->addValidator('StringLength', false, array('min' => 3, 'max' => 255)) 
-                ->setRequired(true); 
-        $this->addElement($lastName);
         
-        
-        $workTitle = new Zend_Form_Element_Text('work_title');
-        $workTitle->addFilter('StringTrim')
-                ->addValidator('StringLength', false, array('min' => 3, 'max' => 255)) 
-                ->setRequired(false); 
-        $this->addElement($workTitle);
-        
-        
-        $email = new Zend_Form_Element_Text('email');
-        $email->addFilter('StringTrim')
-                ->addValidator('EmailAddress', false, array('domain' => false)) //proverava da li postoji domenski deo na netu, ta opcija treba da se iskljuci
-                ->setRequired(true); 
-        $this->addElement($email);
         
         
         $resume = new Zend_Form_Element_Textarea('resume');
@@ -42,11 +24,11 @@ class Application_Form_Admin_MemberAdd extends Zend_Form
         $this->addElement($resume);
         
         
-        $memberPhoto = new Zend_Form_Element_File('member_photo');
+        $productPhoto = new Zend_Form_Element_File('product_photo');
         //ogranicava koliko fajlova sme da se okaci to znaci ovo 1, znaci sme max 1 fajl da se upload-uje
         //true znaci ako ima vise od jednog fajla prekida se izvrsavanje koda i ne ide dalje na MimeType
         //a da je false onda kod nastavlja da se izvrsava
-        $memberPhoto->addValidator('Count', true, 1)
+        $productPhoto->addValidator('Count', true, 1)
                 ->addValidator('MimeType', true, array('image/jpeg', 'image/gif', 'image/png'))
                 ->addValidator('ImageSize', false, array(
                     'minwidth' => 150,
@@ -61,7 +43,7 @@ class Application_Form_Admin_MemberAdd extends Zend_Form
                 ->setValueDisabled(true)
                 ->setRequired(false);
         
-        $this->addElement($memberPhoto);
+        $this->addElement($productPhoto);
     }
 
 }
