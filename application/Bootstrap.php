@@ -33,7 +33,13 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
                 'title' => 'Contact Page',
                 'subtypes' => array(
                 )
+            ),
+            'ServicesPage' => array(
+                'title' => 'Services Page',
+                'subtypes' => array(
+                )
             )
+            
         );
 
         $rootSitemapPageTypes = array(
@@ -41,7 +47,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
             'PhotoGalleriesPage' => 1,
             'AboutUsPage' => 1,
             'ProductsPage' => 1,
-            'ContactPage' => 1
+            'ContactPage' => 1,
+            'ServicesPage' => 1
         );
 
         Zend_Registry::set('sitemapPageTypes', $sitemapPageTypes);
@@ -96,15 +103,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
                         'sitemap_page_id' => $sitemapPageId
                     )
                 ));
-                
-                $router->addRoute('member-route', new Zend_Controller_Router_Route(
-                    $sitemapPageMap['url'] . '/member/:id/:member_slug', 
-                    array(
-                        'controller' => 'aboutus',
-                        'action' => 'member',
-                        'member_slug' => ''
-                )
-            ));
             }
             
             if($sitemapPageMap['type'] == 'ProductsPage') {
@@ -125,6 +123,18 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
                     $sitemapPageMap['url'], 
                     array(
                         'controller' => 'contact',
+                        'action' => 'index',
+                        'sitemap_page_id' => $sitemapPageId
+                    )
+                ));
+            }
+            
+            if($sitemapPageMap['type'] == 'ServicesPage') {
+                
+                $router->addRoute('static-page-route-' . $sitemapPageId, new Zend_Controller_Router_Route_Static(
+                    $sitemapPageMap['url'], 
+                    array(
+                        'controller' => 'services',
                         'action' => 'index',
                         'sitemap_page_id' => $sitemapPageId
                     )
