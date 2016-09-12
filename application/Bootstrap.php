@@ -107,11 +107,11 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
             
             if($sitemapPageMap['type'] == 'ProductsPage') {
                 
-                $router->addRoute('static-page-route-' . $sitemapPageId, new Zend_Controller_Router_Route_Static(
+                $router->addRoute('product-route' . $sitemapPageId, new Zend_Controller_Router_Route_Static(
                     $sitemapPageMap['url'], 
                     array(
-                        'controller' => 'products',
-                        'action' => 'index',
+                        'controller' => 'aboutus',
+                        'action' => 'product',
                         'sitemap_page_id' => $sitemapPageId
                     )
                 ));

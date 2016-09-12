@@ -1,14 +1,14 @@
 <?php
 
-class Zend_View_Helper_MemberUrl extends Zend_View_Helper_Abstract
+class Zend_View_Helper_ProductUrl extends Zend_View_Helper_Abstract
 {
-    public function memberUrl($member){
+    public function productUrl($product){
         
         return $this->view->url(array(
-            'id' => $member['id'],
-            'member_slug' => $member['first_name'] . '-' . $member['last_name']
+            'id' => $product['id'],
+            'product_slug' => $product['product_name']
             
-        ), 'member-route', true);
+        ), 'product-route', true);
     }
 }
 

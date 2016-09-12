@@ -4,7 +4,7 @@ class Application_Form_Admin_ProductAdd extends Zend_Form
 {
     public function init() {
         
-        $firstName = new Zend_Form_Element_Text('product');
+        $firstName = new Zend_Form_Element_Text('product_name');
         //$firstName->addFilter(new Zend_Filter_StringTrim());   isto sto i ovo dole
         //$firstName->addValidator(new Zend_Validate_StringLength(array('min' => 3, 'max' => 255)));
         

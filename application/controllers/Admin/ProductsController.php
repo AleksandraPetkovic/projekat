@@ -184,7 +184,7 @@ class Admin_ProductsController extends Zend_Controller_Action {
                         $productPhoto->fit(150, 150);
 
                         //kakvu god ekstenziju da ubacimo on je konvertuje u jpg// 
-                        $productPhoto->save(PUBLIC_PATH . '/uploads/products/' . $product['id'] . '.jpg');
+                        $productPhoto->save(PUBLIC_PATH . '/front/products/' . $product['id'] . '.jpg');
                     } catch (Exception $ex) {
                         //ne redirektujemo na neku drugu stranu nego ostajemo na toj strani 
                         throw new Application_Model_Exception_InvalidInput('Error occured during image processing');
