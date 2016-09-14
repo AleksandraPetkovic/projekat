@@ -1,3 +1,12 @@
+<?php
+
+$sitemapPage = $this->sitemapPage;
+$this->headTitle($sitemapPage['title']);
+$this->headMeta()->appendName('description', $sitemapPage['description']);
+
+
+?>
+
 <main>
             <!-- SECTION 1 "frid" -->
             <section class="frid clearfix">
@@ -40,8 +49,6 @@
                                 <p>FOLLOW US:</p>
                                 <ul class="list-inline list-unstyled">
                                     <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                    <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                    <li><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
                                     <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
                                     <li><a href="#"><span class="fa fa-instagram"></span></a></li>
                                 </ul>

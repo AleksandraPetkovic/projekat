@@ -39,49 +39,9 @@
          <header>
             <div class="container">
                 <section class="headerTop clearfix">
-                    <ul class="language text-center list-inline">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ENG <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">ENGLISH</a></li>
-                                <li><a href="#">SERBIAN</a></li>
-                                <li><a href="#">ITALIAN</a></li>
-                                <li><a href="#">DEUTCH</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">USD<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">USD</a></li>
-                                <li><a href="#">RSD</a></li>
-                                <li><a href="#">EURO</a></li>
-                                <li><a href="#">GBP</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="account list-inline">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                MY ACCOUNT
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">PROFILE</a></li>
-                                <li><a href="#">ORDERS</a></li>
-                                <li><a href="#">LOG OUT</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                LOGIN
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu login">
-                                <li>LOGIN OR REGISTER</li>
-                                <li><a href="login.html" class="accLog">LOGIN</a></li>
-                                <li>OR</li>
-                                <li><a href="register.html" class="account">CREATE ACCOUNT</a></li>
-                            </ul>
+                    <ul class="account list-inline text-right">
+                        <li>
+                            <span class="fa fa-phone"></span>&nbsp; +381 64 1407505
                         </li>
                     </ul>
                 </section>
@@ -100,7 +60,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">
+                            <a class="navbar-brand" href="<?php echo $this->baseUrl('/');?>">
                                 <img src="front/img/logo.png" alt="" class="img-responsive"/>
                             </a>
                         </div>
@@ -130,31 +90,12 @@
                                         <a href="#"><span class="fa fa-facebook"></span></a>
                                     </li>
                                     <li>
-                                        <a href="#"><span class="fa fa-twitter"></span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="pint"><span class="fa fa-pinterest-p"></span></a>
-                                    </li>
-                                    <li>
                                         <a href="#"><span class="fa fa-google-plus"></span></a>
                                     </li>
                                     <li>
                                         <a href="#"><span class="fa fa-instagram"></span></a>
                                     </li>
                                 </ul>
-                            </article>
-                        </div>
-                        <div class="col-md-9">
-                            <article>
-                                <form>
-                                    <div class="input-group">
-                                        <label for="inputMail">NEWSLETTER</label>
-                                        <input type="text" class="form-control" placeholder="E-mail Address">
-                                        <span class="input-group-btn">
-                                            <button id="inputMail" class="btn btn-default" type="button"><span class="fa fa-play"></span></button>
-                                        </span>
-                                    </div>
-                                </form>
                             </article>
                         </div>
                     </div>
@@ -169,19 +110,16 @@
                             <article class="contact">
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="#">
+                                        <a href="<?php echo $this->baseUrl('/');?>">
                                             <img src="front/img/logo.png" alt="" class="img-responsive"/>
                                         </a>
                                         <div class="smallLine"></div>
                                     </li>
                                     <li>
-                                        <p class="map"><span class="fa fa-map-marker"></span>&nbsp; 28 Green Tower, Street Name New York City, USA</p>
+                                        <p class="map"><span class="fa fa-phone"></span>&nbsp; +381 64 1407505</p>
                                     </li>
                                     <li>
-                                        <p class="map"><span class="fa fa-phone"></span>&nbsp; +00880-444 222 333</p>
-                                    </li>
-                                    <li>
-                                        <p class="map"><a href="mailto:contact@plashbeauty.com"><span class="fa fa-envelope"></span>&nbsp; contact@plashbeauty.com</a></p>
+                                        <p class="map"><a href="mailto:majasminkerica@gmail.com"><span class="fa fa-envelope"></span>&nbsp; majasminkerica@gmail.com</a></p>
                                     </li>
                                 </ul>
                             </article>
@@ -192,42 +130,13 @@
                                 <div class="smallLine"></div>
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="#">About Us</a>
+                                        <a href="<?php echo $this->baseUrl('application/views/scripts/aboutus/index.phtml');?>">O nama</a>
                                     </li>
                                     <li>
-                                        <a href="#">Our Products</a>
+                                        <a href="<?php echo $this->baseUrl('');?>">Proizvodi koji koristimo</a>
                                     </li>
                                     <li>
-                                        <a href="#">Popular Brands</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Blog</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Contact Us</a>
-                                    </li>
-                                </ul>
-                            </article>
-                        </div>
-                        <div class="col-md-3">
-                            <article>
-                                <h4>Quick Links</h4>
-                                <div class="smallLine"></div>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="#">Advanced Search</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Site Map</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Checkout</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Privacy Policy</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">FAQs</a>
+                                        <a href="<?php echo $this->baseUrl('application/views/scripts/contact/index.phtml');?>">Kontaktirajte nas</a>
                                     </li>
                                 </ul>
                             </article>
@@ -238,6 +147,7 @@
             <!-- SECTION 9 "rights" -->
             <section class=" rights text-center">
                 <p>2016 &REG; All Rights Reserved&FilledVerySmallSquare;<span>PLASH</span> Responsive Theme</p>
+                <p class="">Ovaj projekat je realizovan u okviru <a href="http://school.cubes.rs">CUBES SCHOOL</a>. Projekat realizovali: FRONTEND <a href="#">Tanja Nikolic</a> & <a href="#">Miroslav Ranisavljevic</a> BACKEND: <a href="#">Aleksandra Petkovic</a></p>
             </section>
         </footer>
 

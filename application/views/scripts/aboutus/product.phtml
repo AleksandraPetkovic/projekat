@@ -1,0 +1,42 @@
+<?php
+
+$product = $this->product;
+
+$this->headTitle('Product - ' . $product['product_name']);
+?>
+
+<!-- SECTION 4 " -->
+            <section class="popular">
+                <h4 class="text-uppercase text-center">Proizvodi koje koristimo</h4>
+                <img src="img/line.png" alt="" class="img-responsive center-block"/>
+            </section>
+
+            <!-- SECTION 5 " -->
+            <section class="ourTeam">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <article class="singleProduct clearfix">
+                                <figure>
+                                    <img src="<?php echo $this->productImgUrl($product);?>" alt="" class="img-responsive center-block"/>
+
+                                    <div class="product text-center">
+                                        <a href="#"><h4 class="text-uppercase">SARA BROWN</h4></a>
+                                        <h3>MANAGER</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing 
+                                            elit, sed diam my nibh euismod tincidunt
+                                        </p>
+                                        <ul class="list-inline list-unstyled">
+                                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                            <li><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
+                                            <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </figure>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
