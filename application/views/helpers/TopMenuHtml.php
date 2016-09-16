@@ -11,8 +11,8 @@ class Zend_View_Helper_TopMenuHtml extends Zend_View_Helper_Abstract {
                 'parent_id' => 0,
                 'status' => Application_Model_DbTable_CmsSitemapPages::STATUS_ENABLED
             ),
-            'order' => array(
-                'order_number' => 'DESC'
+            'orders' => array(
+                'order_number' => 'ASC'
             )
         ));
         //resetovanje placeholder-a
