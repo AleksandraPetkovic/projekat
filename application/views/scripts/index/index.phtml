@@ -1,3 +1,4 @@
+
 <main>
     <!-- CAROUSEL -->
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -11,39 +12,21 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
+                <img src="<?php echo $this->baseUrl('uploads/index-slides/devojcica.jpg');?>" alt="" class="img-responsive"/>
+                <div class="carousel-caption">
+                    
+                </div>
+            </div>
+            <div class="item">
+                <img src="<?php echo $this->baseUrl('uploads/index-slides/blonde.jpg');?>" alt="" class="img-responsive"/>
+                <div class="carousel-caption">
+                    
+                </div>
+            </div>
+            <div class="item">
                 <img src="<?php echo $this->baseUrl('front/img/main-img.jpg');?>" alt="" class="img-responsive"/>
                 <div class="carousel-caption">
-                    <h2>PLASH</h2>
-                    <h2>SPA BEAUTY SHOP</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, cum odio adolescens 
-                        definitionem ea, est cu nonumy partiendo.
-                    </p>
-                    <a href="#">EXPLORE NOW</a>
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo $this->baseUrl('front/img/main-flower.jpg');?>" alt="" class="img-responsive"/>
-                <div class="carousel-caption">
-                    <h2>PLASH</h2>
-                    <h2>SPA BEAUTY SHOP</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, cum odio adolescens 
-                        definitionem ea, est cu nonumy partiendo.
-                    </p>
-                    <a href="#">EXPLORE NOW</a>
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo $this->baseUrl('front/img/main-candle.jpg');?>" alt="" class="img-responsive"/>
-                <div class="carousel-caption">
-                    <h2>PLASH</h2>
-                    <h2>SPA BEAUTY SHOP</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, cum odio adolescens 
-                        definitionem ea, est cu nonumy partiendo.
-                    </p>
-                    <a href="#">EXPLORE NOW</a>
+                    
                 </div>
             </div>
         </div>
@@ -58,4 +41,34 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+    
+    <!-- ======== @Region: #content ======== -->
+
+        <!-- SECTION 8 "shipping" -->
+    <section class="shipping">
+        <div class="container">
+            <div class="row">
+                <span>Naše usluge</span> 
+                <small><a href="<?php echo $this->sitemapPageUrl($this->servicesSitemapPage['id']);?>">Vidi sve</a></small>
+                <?php
+                foreach ($this->services as $service) {
+                        ?>
+                
+                <li class="col-md-3">
+                            <h3 class="title">  
+                                <i class="<?php echo $this->escape($service['icon']); ?> icon-small icon-inverse-80 _icon-circle"></i>
+                                <?php echo $this->escape($service['title']); ?>
+                            </h3>
+                            <p><?php echo $this->escape($service['description']); ?></p>
+                        </li>
+                
+                <?php
+                    }
+                ?>
+            </div>
+        </div>
+    </section>
+      
+    
+    
 </main>

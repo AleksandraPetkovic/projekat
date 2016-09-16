@@ -46,7 +46,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
             'StaticPage' => 0,
             'PhotoGalleriesPage' => 1,
             'AboutUsPage' => 1,
-            'ProductsPage' => 1,
             'ContactPage' => 1,
             'ServicesPage' => 1
         );
@@ -103,7 +102,17 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
                         'sitemap_page_id' => $sitemapPageId
                     )
                 ));
+                
+                $router->addRoute('product-route', new Zend_Controller_Router_Route(
+                    $sitemapPageMap['url'] . '/product/:id/:product_slug', 
+                    array(
+                        'controller' => 'aboutus',
+                        'action' => 'product',
+                        'product_slug' => ''
+                    )
+                ));
             }
+            
             
             if($sitemapPageMap['type'] == 'ProductsPage') {
                 

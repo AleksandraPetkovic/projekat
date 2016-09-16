@@ -21,18 +21,12 @@ $this->headTitle('Product - ' . $product['product_name']);
                                     <img src="<?php echo $this->productImgUrl($product);?>" alt="" class="img-responsive center-block"/>
 
                                     <div class="product text-center">
-                                        <a href="#"><h4 class="text-uppercase">SARA BROWN</h4></a>
-                                        <h3>MANAGER</h3>
+                                        <a href="#"><h4 class="text-uppercase"><?php echo $this->escape($product['product_name']); ?></h4></a>
+                                        
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing 
-                                            elit, sed diam my nibh euismod tincidunt
+                                            <?php echo $this->escape($product['resume']); ?>
                                         </p>
-                                        <ul class="list-inline list-unstyled">
-                                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
-                                            <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-                                        </ul>
+                                        
                                     </div>
                                 </figure>
                             </article>
