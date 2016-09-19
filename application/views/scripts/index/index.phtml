@@ -55,10 +55,6 @@ $photoGalleries = $this->photoGalleries;
         <div class="container">
             <div class="row">
                 <div class="block services margin-top-large">
-                    <h2 class="block-title">
-                        <span>Naše usluge</span> 
-                        <small><a href="<?php echo $this->sitemapPageUrl($this->servicesSitemapPage['id']); ?>">Vidi sve</a></small>
-                    </h2>
                     <?php
                     foreach ($this->services as $service) {
                         ?>
@@ -68,7 +64,6 @@ $photoGalleries = $this->photoGalleries;
                                 <i class="<?php echo $this->escape($service['icon']); ?> icon-small icon-inverse-80 _icon-circle"></i>
                                 <?php echo $this->escape($service['title']); ?>
                             </h3>
-                            <p><?php echo $this->escape($service['description']); ?></p>
                         </ol>
 
                         <?php
@@ -78,31 +73,35 @@ $photoGalleries = $this->photoGalleries;
             </div>
         </div>
     </section>
+
+
     <section>
-            <div class="block portfolio margin-top-large">
-            <h2 class="block-title">
-                <span>Foto galerija</span> 
-                <small><a href="<?php echo $this->sitemapPageUrl($photoGalleriesPages['id']); ?>">Vidi sve</a></small>
-            </h2>
-            <ul class="thumbnails row projects">
-                 <?php foreach($photoGalleries as $photoGallery) { ?>
-                <ol class="col-md-4 ">
-                    <div class="">
-                        <div class="project">
-                            <a class="lnk-polaroid" href="<?php echo $this->photoGalleryUrl($photoGallery); ?>">
-                                <img src="<?php echo $this->photoGalleryLeadingPhotoUrl($photoGallery); ?>" alt="<?php echo $this->escape($photoGallery['title']); ?>" class="img-polaroid img-responsive" />
-                            </a>
-                            <h3 class="title">
-                                <a href="<?php echo $this->photoGalleryUrl($photoGallery); ?>"><?php echo $this->escape($photoGallery['title']); ?></a>
-                                <small class="pull-right"></small>
-                            </h3>
-                            <p class="muted"><?php echo $this->escape($photoGallery['description']); ?></p>
-                        </div>
-                    </div>
-                </ol>
-                 <?php }?>
-                
-            </ul>
+        <div class="container">
+            <div class="row">
+                <h2 class="block-title">
+                    <span>Foto galerija</span> 
+                    <small><a href="<?php echo $this->sitemapPageUrl($photoGalleriesPages['id']); ?>">Vidi sve</a></small>
+                </h2>
+                <ul class="thumbnails row projects">
+                    <?php foreach ($photoGalleries as $photoGallery) { ?>
+                        <ol class="col-md-4">
+                            <div class="">
+                                <div class="project">
+                                    <a class="lnk-polaroid" href="<?php echo $this->photoGalleryUrl($photoGallery); ?>">
+                                        <img src="<?php echo $this->photoGalleryLeadingPhotoUrl($photoGallery); ?>" alt="<?php echo $this->escape($photoGallery['title']); ?>" class="img-polaroid img-responsive" />
+                                    </a>
+                                    <h3 class="title">
+                                        <a href="<?php echo $this->photoGalleryUrl($photoGallery); ?>"><?php echo $this->escape($photoGallery['title']); ?></a>
+                                        <small class="pull-right"></small>
+                                    </h3>
+                                    <p class="muted"><?php echo $this->escape($photoGallery['description']); ?></p>
+                                </div>
+                            </div>
+                        </ol>
+                    <?php } ?>
+
+                </ul>
+            </div>
         </div>
-        </section>
+    </section>
 </main>
