@@ -1,4 +1,10 @@
-
+<?php
+$indexSlides = $this->indexSlides;
+$services = $this->services;
+$servicesSitemapPages = $this->servicesSitemapPages;
+$photoGalleriesPages = $this->photoGalleriesPages;
+$photoGalleries = $this->photoGalleries;
+?>
 <main>
     <!-- CAROUSEL -->
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -12,21 +18,21 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="<?php echo $this->baseUrl('uploads/index-slides/devojcica.jpg');?>" alt="" class="img-responsive"/>
+                <img src="<?php echo $this->baseUrl('uploads/index-slides/devojcica.jpg'); ?>" alt="" class="img-responsive"/>
                 <div class="carousel-caption">
-                    
+
                 </div>
             </div>
             <div class="item">
-                <img src="<?php echo $this->baseUrl('uploads/index-slides/blonde.jpg');?>" alt="" class="img-responsive"/>
+                <img src="<?php echo $this->baseUrl('uploads/index-slides/blonde.jpg'); ?>" alt="" class="img-responsive"/>
                 <div class="carousel-caption">
-                    
+
                 </div>
             </div>
             <div class="item">
-                <img src="<?php echo $this->baseUrl('front/img/main-img.jpg');?>" alt="" class="img-responsive"/>
+                <img src="<?php echo $this->baseUrl('front/img/main-img.jpg'); ?>" alt="" class="img-responsive"/>
                 <div class="carousel-caption">
-                    
+
                 </div>
             </div>
         </div>
@@ -41,34 +47,62 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    
+
     <!-- ======== @Region: #content ======== -->
 
-        <!-- SECTION 8 "shipping" -->
+    <!-- SECTION 8 "shipping" -->
     <section class="shipping">
         <div class="container">
             <div class="row">
-                <span>Naše usluge</span> 
-                <small><a href="<?php echo $this->sitemapPageUrl($this->servicesSitemapPage['id']);?>">Vidi sve</a></small>
-                <?php
-                foreach ($this->services as $service) {
+                <div class="block services margin-top-large">
+                    <h2 class="block-title">
+                        <span>Naše usluge</span> 
+                        <small><a href="<?php echo $this->sitemapPageUrl($this->servicesSitemapPage['id']); ?>">Vidi sve</a></small>
+                    </h2>
+                    <?php
+                    foreach ($this->services as $service) {
                         ?>
-                
-                <li class="col-md-3">
+
+                        <ol class="col-md-3">
                             <h3 class="title">  
                                 <i class="<?php echo $this->escape($service['icon']); ?> icon-small icon-inverse-80 _icon-circle"></i>
                                 <?php echo $this->escape($service['title']); ?>
                             </h3>
                             <p><?php echo $this->escape($service['description']); ?></p>
-                        </li>
-                
-                <?php
+                        </ol>
+
+                        <?php
                     }
-                ?>
+                    ?>
+                </div>
             </div>
         </div>
     </section>
-      
-    
-    
+    <section>
+            <div class="block portfolio margin-top-large">
+            <h2 class="block-title">
+                <span>Foto galerija</span> 
+                <small><a href="<?php echo $this->sitemapPageUrl($photoGalleriesPages['id']); ?>">Vidi sve</a></small>
+            </h2>
+            <ul class="thumbnails row projects">
+                 <?php foreach($photoGalleries as $photoGallery) { ?>
+                <ol class="col-md-4 ">
+                    <div class="">
+                        <div class="project">
+                            <a class="lnk-polaroid" href="<?php echo $this->photoGalleryUrl($photoGallery); ?>">
+                                <img src="<?php echo $this->photoGalleryLeadingPhotoUrl($photoGallery); ?>" alt="<?php echo $this->escape($photoGallery['title']); ?>" class="img-polaroid img-responsive" />
+                            </a>
+                            <h3 class="title">
+                                <a href="<?php echo $this->photoGalleryUrl($photoGallery); ?>"><?php echo $this->escape($photoGallery['title']); ?></a>
+                                <small class="pull-right"></small>
+                            </h3>
+                            <p class="muted"><?php echo $this->escape($photoGallery['description']); ?></p>
+                        </div>
+                    </div>
+                </ol>
+                 <?php }?>
+                
+            </ul>
+        </div>
+        </section>
 </main>

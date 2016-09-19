@@ -1,103 +1,94 @@
 <?php
-
 $sitemapPage = $this->sitemapPage;
 $this->headTitle($sitemapPage['title']);
 $this->headMeta()->appendName('description', $sitemapPage['description']);
-
-
 ?>
 
 <main>
-            <!-- SECTION 1 "frid" -->
-            <section class="frid clearfix">
-                <figure>
-                    <img src="<?php echo $this->baseUrl('/front/img/hot-stone.jpg');?>" alt="" class="img-responsive"/>
-                </figure>
-                <div class="gridView">
-                    <h3 class="text-uppercase text-center"><?php echo $this->escape($sitemapPage['title']); ?></h3>
-                    
-                </div>
-            </section>
+    <!-- SECTION 1 "frid" -->
+    <section class="frid clearfix">
+        <figure>
+            <img src="<?php echo $this->baseUrl('/front/img/hot-stone.jpg'); ?>" alt="" class="img-responsive"/>
+        </figure>
+        <div class="gridView">
+            <h3 class="text-uppercase text-center"><?php echo $this->escape($sitemapPage['title']); ?></h3>
 
-            <!-- SECTION 2 -->
-            <section class="popular">
-                <h4 class="text-uppercase text-center"><?php echo $this->escape($sitemapPage['description']); ?></h4>
-                <img src="<?php echo $this->baseUrl('/front/img/line.png');?>" alt="" class="img-responsive center-block"/>
-            </section>
+        </div>
+    </section>
 
-            <!-- SECTION 3 " -->
-            <section class="ourCompany">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <article>
-                                <h4 class="text-uppercase"><?php echo $sitemapPage['body']; ?></h4> 
-                                
-                                
-                                
+    <!-- SECTION 2 -->
+    <section class="popular">
+        <h4 class="text-uppercase text-center"><?php echo $this->escape($sitemapPage['description']); ?></h4>
+        <img src="<?php echo $this->baseUrl('/front/img/line.png'); ?>" alt="" class="img-responsive center-block"/>
+    </section>
+
+    <!-- SECTION 3 " -->
+    <section class="ourCompany">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <article>
+                        <h4 class="text-uppercase"><?php echo $sitemapPage['body']; ?></h4> 
+
+
+
 <!--                                <p>PRATITE NAS NA DRUŠTVENIM MREŽAMA:</p>
-                                <ul class="list-inline list-unstyled">
-                                    <li><a href="https://www.facebook.com/majasminkerica011/" target="_blank"><span class="fa fa-facebook"></span></a></li>
-                                    <li><a href="https://plus.google.com/u/2/?hl=sr" target="_blank"><span class="fa fa-google-plus"></span></a></li>
-                                    <li><a href="https://www.instagram.com/maja_sminkerica/" target="_blank"><span class="fa fa-instagram"></span></a></li>
-                                </ul>-->
-                            </article>
-                        </div>
-<!--                        <div class="col-md-6">
-                            <article class="clearfix">
-                                <figure>
-                                    <img src="<?php //echo $this->baseUrl('/front/img/shop.png');?>" alt="" class="img-responsive center-block"/>
-                                </figure>
-                            </article>
-                        </div>-->
-                    </div>
+<ul class="list-inline list-unstyled">
+    <li><a href="https://www.facebook.com/majasminkerica011/" target="_blank"><span class="fa fa-facebook"></span></a></li>
+    <li><a href="https://plus.google.com/u/2/?hl=sr" target="_blank"><span class="fa fa-google-plus"></span></a></li>
+    <li><a href="https://www.instagram.com/maja_sminkerica/" target="_blank"><span class="fa fa-instagram"></span></a></li>
+</ul>-->
+                    </article>
                 </div>
-            </section>
-            
-            <!-- SECTION 4 " -->
-            <section class="popular">
-                <h4 class="text-uppercase text-center">Proizvodi koje koristimo</h4>
-                <img src="<?php echo $this->baseUrl('/front/img/line.png');?>" alt="" class="img-responsive center-block"/>
-            </section>
+                <!--                        <div class="col-md-6">
+                                            <article class="clearfix">
+                                                <figure>
+                                                    <img src="<?php //echo $this->baseUrl('/front/img/shop.png'); ?>" alt="" class="img-responsive center-block"/>
+                                                </figure>
+                                            </article>
+                                        </div>-->
+            </div>
+        </div>
+    </section>
 
-            <!-- SECTION 5 " -->
-            <section class="ourTeam">
-                <div class="container">
-                    <div class="row">
+    <!-- SECTION 4 " -->
+    <section class="popular">
+        <h4 class="text-uppercase text-center">Proizvodi koje koristimo</h4>
+        <img src="<?php echo $this->baseUrl('/front/img/line.png'); ?>" alt="" class="img-responsive center-block"/>
+    </section>
+
+    <!-- SECTION 5 " -->
+    <section class="ourTeam">
+        <div class="container">
+            <div class="row">
+                <?php
+                $i = 0;
+                foreach ($this->products as $product) {
+                    if ($i % 4 === 0) {
+                        ?>
+            </div>
+            <div class="row">
+                    <ul class="thumbnails list-unstyled team">
                         <?php
-                            
-                            $i = 0;
-                            foreach ($this->products as $product) {
-                                if ($i % 4 === 0) {
-                                    ?>
-                                </ul>
-                            </div>
-                        
-                            <article class="singleProduct clearfix">
-                                <figure>
-                                    <?php
-                                }
-                                $i++;
-                                
-                                $memberImgUrl = $this->productImgUrl($product);
-                                ?>
-                                    <img src="<?php echo $this->productImgUrl($product);?>" alt="" class="img-responsive center-block"/>
+                    }
+                    $i++;
 
-                                    <div class="product text-center">
-                                        <a href="<?php echo $this->productUrl($product);?>"><h4 class="text-uppercase"><?php echo $this->escape($product['product_name']); ?></h4></a>
-<!--                                        <h3>MANAGER</h3>-->
-                                        <p>
-                                            <?php echo $this->escape($product['resume']); ?>
-                                        </p>
-                                    </div>
-                                </figure>
-                            </article>
-                        
-                    </div>
-                    <?php
-                            }
-                            ?>
+                    $memberImgUrl = $this->productImgUrl($product);
+                    ?>
+                    <ol class="col-sm-6 col-md-3">
+                        <img src="<?php echo $this->productImgUrl($product); ?>" alt="" class="img-responsive center-block"/>
+
+                        <div class="product text-center">
+                            <a href="<?php echo $this->productUrl($product); ?>"><h4 class="text-uppercase"><?php echo $this->escape($product['product_name']); ?></h4></a>
+                        </div>
+                    </ol>
+    <?php
+}
+?>
+            </ul>
                 </div>
-            </section>
+        </div>
+        </div>
+    </section>
 
-        </main>
+</main>

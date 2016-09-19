@@ -10,20 +10,20 @@
         <?php echo $this->headMeta(); ?>
         <!-- General CSS -->
 
-        
+
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-        <link rel="stylesheet" href="<?php echo $this->baseUrl('/front/css/bootstrap.css');?>">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/front/css/bootstrap.css'); ?>">
         <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,600italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900,900italic,300italic' rel='stylesheet' type='text/css'>
-        <link href="<?php echo $this->baseUrl('/front/css/owl.carousel.css');?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo $this->baseUrl('/front/css/owl.theme.css" rel="stylesheet');?>" type="text/css"/>
-        <link href="<?php echo $this->baseUrl('/front/css/image-switcher.css');?>" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo $this->baseUrl('/front/css/owl.carousel.css'); ?>" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo $this->baseUrl('/front/css/owl.theme.css" rel="stylesheet'); ?>" type="text/css"/>
+        <link href="<?php echo $this->baseUrl('/front/css/image-switcher.css'); ?>" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="<?php echo $this->baseUrl('/front/css/main.css');?>">
-        <link href="<?php echo $this->baseUrl('/front/css/responsive.css');?>" rel="stylesheet" type="text/css"/>
-        
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/front/css/main.css'); ?>">
+        <link href="<?php echo $this->baseUrl('/front/css/responsive.css'); ?>" rel="stylesheet" type="text/css"/>
 
-        
+
+
 
         <?php echo $this->headLink(); ?>
         <!-- Theme  CSS -->
@@ -36,7 +36,7 @@
     <!-- ======== @Region: body ======== -->
     <!-- HEADER -->
     <body>
-         <header>
+        <header>
             <div class="container">
                 <section class="headerTop clearfix">
                     <ul class="account list-inline text-right">
@@ -60,8 +60,8 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="<?php echo $this->baseUrl('/');?>">
-                                <img src="front/img/logo.png" alt="" class="img-responsive"/>
+                            <a class="navbar-brand" href="<?php echo $this->baseUrl('/'); ?>">
+                                <img src="<?php echo $this->baseUrl('/front/img/logo.png'); ?>" alt="" class="img-responsive"/>
                             </a>
                         </div>
 
@@ -70,20 +70,19 @@
 
                             <?php echo $this->topMenuHtml(); ?>
                         </div>
-                        </div><!-- /.container-fluid -->
+                    </div><!-- /.container-fluid -->
                 </nav>
             </div>
         </header>
         <?php echo $this->layout()->content; ?>
 
-                        
+
         <!-- FOOTER -->
         <footer>
-            <!-- SECTION 7 "newsletter" -->    
+            <!-- SECTION 7 "socialnetworks" -->    
             <section class="newsletter">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3">
                             <article class="social">
                                 <ul class="list-inline list-unstyled text-center">
                                     <li>
@@ -97,56 +96,22 @@
                                     </li>
                                 </ul>
                             </article>
-                        </div>
                     </div>
                 </div>
             </section>
-
-            <!-- SECTION 8 "address" -->
+            
+            <!-- SECTION 8 "topmenu" -->
             <section class="address">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4">
-                            <article class="contact">
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="<?php echo $this->baseUrl('/');?>">
-                                            <img src="front/img/logo.png" alt="" class="img-responsive"/>
-                                        </a>
-                                        <div class="smallLine"></div>
-                                    </li>
-<!--                                    <li>
-                                        <p class="map"><span class="fa fa-phone"></span>&nbsp; +381 64 1407505</p>
-                                    </li>-->
-                                    <li>
-                                        <p class="map"><a href="mailto:majasminkerica@gmail.com"><span class="fa fa-envelope"></span>&nbsp; majasminkerica@gmail.com</a></p>
-                                    </li>
-                                </ul>
-                            </article>
-                        </div>
-                        
-                                
-                                <div id="bs-example-navbar-collapse-1" class="col-md-4" text="right">
-
-                                    <?php echo $this->topMenuHtml(); ?>
-                                </div>
-<!--                                <h4>Main Menu</h4>
-                                <div class="smallLine"></div>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="<?php //echo $this->baseUrl('application/views/scripts/aboutus/index.phtml');?>">O nama</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php //echo $this->url(array('controller' => 'contact'), 'contact', true);?> ">Kontaktirajte nas</a>
-                                    </li>
-                                </ul>-->
-                          
+                            <?php echo $this->topMenuHtml(); ?>
                     </div>
                 </div>
             </section>
+            
             <!-- SECTION 9 "rights" -->
             <section class=" rights text-center">
-                <p class="">Ovaj projekat je realizovan u okviru <a href="http://school.cubes.rs">CUBES SCHOOL</a>. Projekat realizovali: FRONTEND <a href="#">Tanja Nikolic</a> & <a href="#">Miroslav Ranisavljevic</a> BACKEND: <a href="https://rs.linkedin.com/in/aleksandra-petkovic-316b46116" target="_blank">Aleksandra Petkovic</a></p>
+                <p class="">Ovaj projekat je realizovan u okviru <a href="http://school.cubes.rs" target="_blank">CUBES SCHOOL</a>. Projekat realizovali: FRONTEND <a href="#">Tanja Nikolic</a> & <a href="#">Miroslav Ranisavljevic</a> BACKEND: <a href="https://rs.linkedin.com/in/aleksandra-petkovic-316b46116" target="_blank">Aleksandra Petkovic</a></p>
             </section>
         </footer>
 
@@ -180,15 +145,15 @@
         </div>
         <!-- Modal end-->
 
-        <script src="<?php echo $this->baseUrl('/front/js/jquery-3.0.0.min.js');?>" type="text/javascript"></script>
-        <script>window.jQuery || document.write('<script src="<?php echo $this->baseUrl('/front/js/vendor/jquery-1.11.2.js');?>"><\/script>')</script>
+        <script src="<?php echo $this->baseUrl('/front/js/jquery-3.0.0.min.js'); ?>" type="text/javascript"></script>
+        <script>window.jQuery || document.write('<script src="<?php echo $this->baseUrl('/front/js/vendor/jquery-1.11.2.js'); ?>"><\/script>')</script>
 
-        <script src="<?php echo $this->baseUrl('/front/js/vendor/bootstrap.min.js');?>"></script>
-        <script src="<?php echo $this->baseUrl('/front/js/owl.carousel.js" type="text/javascript');?>"></script>
+        <script src="<?php echo $this->baseUrl('/front/js/vendor/bootstrap.min.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/front/js/owl.carousel.js" type="text/javascript'); ?>"></script>
         <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-        <script src="<?php echo $this->baseUrl('/front/resources/demos/external/jquery-mousewheel/jquery.mousewheel.js');?>"></script>
-        <script src="<?php echo $this->baseUrl('/front/js/validator.js" type="text/javascript');?>"></script>
-        <script src="<?php echo $this->baseUrl('/front/js/main.js');?>"></script>
+        <script src="<?php echo $this->baseUrl('/front/resources/demos/external/jquery-mousewheel/jquery.mousewheel.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/front/js/validator.js" type="text/javascript'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/front/js/main.js'); ?>"></script>
 
         <?php echo $this->inlineScript(); ?>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -209,9 +174,9 @@
             ga('send', 'pageview');
         </script>
 
-               
+
         <!--Scripts -->
-        
+
     </body>
 
 </html>
