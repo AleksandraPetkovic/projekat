@@ -601,7 +601,7 @@ main{
 .newsletter{
     background-color: #eeeeee;
     color: #303030;
-    padding: 45px 0;
+    padding: 10px 0;
 }
 .newsletter label{
     font-family: 'Josefin Sans', sans-serif;
@@ -1806,4 +1806,13 @@ a.increase, a.decrease{
 }
 .preview nav a img{
     max-width: 100% !important;
+}
+
+footer ul.nav {
+    float: none!important;
+    display: inline-block;
+}
+
+div#bs-example-navbar-collapse-1 {
+    text-align: center;
 }
