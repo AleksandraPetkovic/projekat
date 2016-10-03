@@ -11,7 +11,7 @@ $form->setElementDecorators(array('ViewHelper'));
 </div>
 <div class="row">
     <div class="col-lg-12">
-        <?php echo $this->systemMessagesHtml($this->systemMessages); ?>
+        <?php echo $this->systemMessagesHtml($this->systemMessages);?>
     </div>
 </div>
 <div class="row">
@@ -26,31 +26,31 @@ $form->setElementDecorators(array('ViewHelper'));
                 </div>
             </div>
             <div class="panel-body">
-                <form class="form-horizontal" method="post" action="">
+                <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
                     <input type="hidden" name="task" value="update">
                     <fieldset>
 
                         <!-- Form Name -->
-                        <legend>Edit Service - <?php echo $this->escape($this->member['title'] . ' ' . $this->member['icon']); ?></legend>
+                        <legend>Edit Service - <?php echo $this->escape($this->service['service_name']);?></legend>
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="title">Title</label>  
+                            <label class="col-md-4 control-label" for="service">Name</label>  
                             <div class="col-md-4">
                                 <?php
-                                echo $form->getElement('title')->setAttribs(array(
+                                echo $form->getElement('service_name')->setAttribs(array(
                                     'class' => 'form-control input-md',
-                                    'placeholder' => "enter service\'s title",
-                                    'id' => "title",
+                                    'placeholder' => "enter service\'s name", 
+                                    'id' => "service_name",
                                     'required' => 'required'
                                 ));
                                 ?>
                                 <span class="help-block">min 3 max 255 characters</span>  
                             </div>
                             <div class="col-md-4">
-                                <?php if ($form->getElement('title')->hasErrors()) { ?>
+                                <?php if ($form->getElement('service_name')->hasErrors()) { ?>
                                     <div class="has-error">
-                                        <?php foreach ($form->getElement('title')->getMessages() as $message) { ?>
+                                        <?php foreach ($form->getElement('service_name')->getMessages() as $message) { ?>
                                             <p class="help-block"><?php echo $this->escape($message); ?></p>
                                         <?php } ?>
                                     </div>
@@ -59,51 +59,48 @@ $form->setElementDecorators(array('ViewHelper'));
                             </div>
                         </div>
 
-                        <!-- Text input-->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="icon">Icon</label>  
-                            <div class="col-md-4">
-                                <?php
-                                echo $form->getElement('icon')->setAttribs(array(
-                                    'class' => 'form-control input-md',
-                                    'placeholder' => 'enter service\'s icon',
-                                    'id' => 'icon',
-                                    'required' => 'required',
-                                ));
-                                ?>
-
-                                <span class="help-block">min 3 max 255 characters</span>  
-                            </div>
-                            <div class="col-md-4">
-                                <?php if ($form->getElement('icon')->hasErrors()) { ?>
-                                    <div class="has-error">
-                                        <?php foreach ($form->getElement('icon')->getMessages() as $message) { ?>
-                                            <p class="help-block"><?php echo $this->escape($message); ?></p>
-                                        <?php } ?>
-                                    </div>
-                                <?php } ?>
-
-                            </div>
-                        </div>
-
+                        
+                        
                         <!-- Textarea -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="description">Description</label>
+                            <label class="col-md-4 control-label" for="resume">Resume</label>
                             <div class="col-md-4">  
                                 <?php
-                                echo $form->getElement('description')->setAttribs(array(
+                                echo $form->getElement('resume')->setAttribs(array(
                                     'class' => 'form-control',
-                                    'id' => 'description',
+                                    'id' => 'resume',
                                     'rows' => 12,
-                                    'required' => 'required',
                                 ));
                                 ?>
-
+                                
                             </div>
                             <div class="col-md-4">
-                                <?php if ($form->getElement('description')->hasErrors()) { ?>
+                                <?php if ($form->getElement('resume')->hasErrors()) { ?>
                                     <div class="has-error">
-                                        <?php foreach ($form->getElement('description')->getMessages() as $message) { ?>
+                                        <?php foreach ($form->getElement('resume')->getMessages() as $message) { ?>
+                                            <p class="help-block"><?php echo $this->escape($message); ?></p>
+                                        <?php } ?>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                        
+                        <!-- Textarea -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="service_photo">Photo</label>
+                            <div class="col-md-4">  
+                                <div>
+                                    <a href="#" class="thumbnail">
+                                        <img src="<?php echo $this->serviceImgUrl($this->service);?>">
+                                    </a>
+                                </div>
+                                <input type="file" name="service_photo" id="service_photo" class="form-control input-md">
+                                <span class="help-block">change photo</span>
+                            </div>
+                            <div class="col-md-4">
+                                <?php if ($form->getElement('service_photo')->hasErrors()) { ?>
+                                    <div class="has-error">
+                                        <?php foreach ($form->getElement('service_photo')->getMessages() as $message) { ?>
                                             <p class="help-block"><?php echo $this->escape($message); ?></p>
                                         <?php } ?>
                                     </div>
@@ -116,8 +113,8 @@ $form->setElementDecorators(array('ViewHelper'));
                             <label class="col-md-4 control-label" for="new_service_cancel"></label>
                             <div class="col-md-4 text-right">
                                 <a
-                                    href="<?php echo $this->url(array('controller' => 'admin_services', 'action' => 'index'), 'default', true); ?>"
-                                    id="new_member_cancel" name="new_service_cancel" class="btn btn-default">Cancel</a>
+                                    href="<?php echo $this->url(array('controller' => 'admin_services', 'action' => 'index'), 'default', true);?>"
+                                    id="new_service_cancel" name="new_service_cancel" class="btn btn-default">Cancel</a>
                                 <button type="submit" name="new_service_submit" class="btn btn-success">Save</button>
                             </div>
                         </div>
@@ -128,7 +125,6 @@ $form->setElementDecorators(array('ViewHelper'));
         </div>
     </div>
 </div>
-
 
 
 

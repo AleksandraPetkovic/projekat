@@ -18,19 +18,19 @@ $photoGalleries = $this->photoGalleries;
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
+                <img src="<?php echo $this->baseUrl('uploads/index-slides/ridjokosa.jpg'); ?>" alt="" class="img-responsive"/>
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+            <div class="item">
+                <img src="<?php echo $this->baseUrl('uploads/index-slides/red.jpg'); ?>" alt="" class="img-responsive"/>
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+            <div class="item">
                 <img src="<?php echo $this->baseUrl('uploads/index-slides/devojcica.jpg'); ?>" alt="" class="img-responsive"/>
-                <div class="carousel-caption">
-
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo $this->baseUrl('uploads/index-slides/blonde.jpg'); ?>" alt="" class="img-responsive"/>
-                <div class="carousel-caption">
-
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo $this->baseUrl('front/img/main-img.jpg'); ?>" alt="" class="img-responsive"/>
                 <div class="carousel-caption">
 
                 </div>
@@ -54,20 +54,18 @@ $photoGalleries = $this->photoGalleries;
     <section class="shipping">
         <div class="container">
             <div class="row">
-                <div class="block services margin-top-large">
+                
                     <?php
-                    foreach ($this->services as $service) {
-                        ?>
-
-                        <ol class="col-md-3">
-                            <h3 class="title">  
-                                <i class="<?php echo $this->escape($service['icon']); ?> icon-small icon-inverse-80 _icon-circle"></i>
-                                <?php echo $this->escape($service['title']); ?>
-                            </h3>
-                        </ol>
-
+                    foreach ($this->services as $service) { ?>
+                            <ol class="col-md-3">
+                                <h3 class="title">  
+                                    <img src="<?= $this->frontServiceImgUrl($service);?>" title="Ime"/>
+                                    <i class=" icon-small icon-inverse-80 _icon-circle"></i>
+                                    <?php echo $this->escape($service['service_name']); ?>
+                                </h3>
+                            </ol>
                         <?php
-                    }
+                        }
                     ?>
                 </div>
             </div>
@@ -91,10 +89,10 @@ $photoGalleries = $this->photoGalleries;
                                         <img src="<?php echo $this->photoGalleryLeadingPhotoUrl($photoGallery); ?>" alt="<?php echo $this->escape($photoGallery['title']); ?>" class="img-polaroid img-responsive" />
                                     </a>
                                     <h3 class="title">
-                                        <a href="<?php echo $this->photoGalleryUrl($photoGallery); ?>"><?php echo $this->escape($photoGallery['title']); ?></a>
+                                        <a href="<?php echo $this->photoGalleryUrl($photoGallery); ?>"></a>
                                         <small class="pull-right"></small>
                                     </h3>
-                                    <p class="muted"><?php echo $this->escape($photoGallery['description']); ?></p>
+                                    
                                 </div>
                             </div>
                         </ol>

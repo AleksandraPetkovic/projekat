@@ -19,8 +19,7 @@ $this->headTitle('Services');
                     <bytton data-action="save-order" style="display: none;" class="btn btn-success"><i class="glyphicon glyphicon-save"></i>Save Order</bytton>
                     <bytton data-action="toogle-sort" class="btn btn-default"><i class="glyphicon glyphicon-list"></i>Change Order</bytton>
                     <a 
-                        href="<?php echo $this->url(array
-                                ('controller' => 'admin_services', 'action' => 'add'), 'default', true); ?>" type="button" 
+                        href="<?php echo $this->url(array('controller' => 'admin_services', 'action' => 'add'), 'default', true); ?>" type="button" 
                         class="btn btn-default"
                         ><i class="glyphicon glyphicon-plus"></i>Add service</a>
                 </div>
@@ -30,11 +29,10 @@ $this->headTitle('Services');
                     <thead>
                         <tr>
                             <th></th>
-                            <th class="text-center">Icon</th>
+                            <th class="text-center">Img</th>
                             <th class="text-center">Status</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>#</th>
+                            <th>Name</th>
+                            <th class="text-center">#</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,14 +42,13 @@ $this->headTitle('Services');
                                 ?>
                                 <tr class="danger" data-service-id="<?php echo $this->escape($service['id']); ?>">
                                     <td class="text-center"><i data-action="sort" class="glyphicon glyphicon-list" style="display: none; cursor: pointer;"></i></td>
-                                    <td class="text-center"><span><i class="<?php echo $this->escape($service['icon']); ?>"></i></span></td>
+                                    <td class="text-center"><img style="max-height: 24px;" src="<?php echo $this->serviceImgUrl($service); ?>"></td>
                                     <td class="text-center"><span class="badge alert-danger" title="disabled"><i class="glyphicon glyphicon-remove"></i></span></td>
-                                    <td><?php echo $this->escape($service['title']); ?></td>
-                                    <td><?php echo $this->escape($service['description']); ?></td>
+                                    <td><?php echo $this->escape($service['service_name']); ?></td>
                                     <td class="text-center">
                                         <div class="btn-group btn-group-sm" role="group" aria-label="...">
                                             <a 
-                                                href="<?php echo $this->url(array('controller' => 'services', 'action' => 'index', 'id' => $service['id']), 'default', true); ?>" 
+                                                href="<?php $this->url(array('controller' => 'services', 'action' => 'index'),'default',true) ;?>" 
                                                 target="_blank"
                                                 type="button" class="btn btn-default" title="preview"><i class="glyphicon glyphicon-eye-open"></i></a>
                                             <a 
@@ -59,6 +56,7 @@ $this->headTitle('Services');
                                                 type="button" class="btn btn-default" title="edit"><i class="glyphicon glyphicon-pencil"></i></a>
                                             <button data-service-id="<?php echo $this->escape($service['id']); ?>" data-action="enable" type="button" class="btn btn-default" title="enable"><i class="glyphicon glyphicon-ok"></i></button>
                                             <button data-service-id="<?php echo $this->escape($service['id']); ?>" data-action="delete" type="button" class="btn btn-default" title="delete"><i class="glyphicon glyphicon-trash"></i></button>
+
                                         </div>
                                     </td>
                                 </tr>
@@ -67,21 +65,22 @@ $this->headTitle('Services');
                                 ?> 
                                 <tr data-service-id="<?php echo $this->escape($service['id']); ?>">
                                     <td class="text-center"><i data-action="sort" class="glyphicon glyphicon-list" style="display: none; cursor: pointer;"></i></td>
-                                    <td class="text-center"><span><i class="<?php echo $this->escape($service['icon']); ?>"></i></span></td>
+                                    <td class="text-center"><img style="max-height: 24px;" src="<?= $this->frontServiceImgUrl($service);?>"></td>
                                     <td class="text-center"><span class="badge alert-success" title="enabled"><i class="glyphicon glyphicon-ok"></i></span></td>
-                                    <td><?php echo $this->escape($service['title']); ?></td>
-                                    <td><?php echo $this->escape($service['description']); ?></td>
+                                    <td><?php echo $this->escape($service['service_name']); ?></td>
                                     <td class="text-center">
                                         <div class="btn-group btn-group-sm" role="group" aria-label="...">
                                             <a 
-                                                href="<?php echo $this->url(array('controller' => 'services', 'action' => 'index', 'id' => $service['id']), 'default', true); ?>" 
+                                                href="<?php $this->url(array('controller' => 'services', 'action' => 'index'),'default',true) ;?>zzz" 
                                                 target="_blank"
                                                 type="button" class="btn btn-default" title="preview"><i class="glyphicon glyphicon-eye-open"></i></a>
                                             <a 
                                                 href="<?php echo $this->url(array('controller' => 'admin_services', 'action' => 'edit', 'id' => $service['id']), 'default', true); ?>" 
                                                 type="button" class="btn btn-default" title="edit"><i class="glyphicon glyphicon-pencil"></i></a>
                                             <button data-service-id="<?php echo $this->escape($service['id']); ?>" data-action="disable" type="button" class="btn btn-default" title="disable"><i class="glyphicon glyphicon-remove"></i></button>
-                                            <button data-service-id="<?php echo $this->escape($service['id']); ?>" data-action="delete" type="button" class="btn btn-default" title="delete"><i class="glyphicon glyphicon-trash"></i></button>                                        </div>
+                                            <button data-service-id="<?php echo $this->escape($service['id']); ?>" data-action="delete" type="button" class="btn btn-default" title="delete"><i class="glyphicon glyphicon-trash"></i></button>
+
+                                        </div>
                                     </td>
                                 </tr>
                                 <?php
@@ -178,32 +177,29 @@ $this->headLink()->appendStylesheet($this->baseUrl('/admin/bower_components/jque
 $this->inlineScript()->appendFile($this->baseUrl('/admin/bower_components/jquery-ui-1.12.0/jquery-ui.min.js'));
 ?>
 
-
-
 <script>
 <?php $this->inlineScript()->captureStart(); ?>
+
     //delete
     $('#rows-table').on('click', '[data-action="delete"]', function (e) {
 
         e.preventDefault();
-
         e.stopPropagation();
 
         //calculate target element //ovako radi u svim browserima
         var target = $(this).is('[data-action="delete"]') ? $(this) : $(this).closest('[data-action="delete"]');
 
-
-        //attr je za bilo koji atribut
+        //attr je za bilo koji atribut/ href/ src/
         var serviceId = target.attr('data-service-id');
 
-
         //ovo vadi samo data atribute// getdata-attributes
-        //var memberId = target.data('memberId');
+        var serviceId = target.data('serviceId');
 
-        //alert(memberId);
+        //alert(serviceId);
 
         //set values for input field with name "id"
         $('#delete-warning-dialog').find('input[name="id"]').val(serviceId);
+
         $('#delete-warning-dialog').modal('show');
 
     });
@@ -223,9 +219,9 @@ $this->inlineScript()->appendFile($this->baseUrl('/admin/bower_components/jquery
         var serviceId = target.attr('data-service-id');
 
         //ovo vadi samo data atribute// getdata-attributes
-        //var memberId = target.data('memberId');
+        //var serviceId = target.data('serviceId');
 
-        //alert(memberId);
+        //alert(serviceId);
 
         //set values for input field with name "id"
         $('#disable-warning-dialog').find('input[name="id"]').val(serviceId);
@@ -238,7 +234,6 @@ $this->inlineScript()->appendFile($this->baseUrl('/admin/bower_components/jquery
     $('#rows-table').on('click', '[data-action="enable"]', function (e) {
 
         e.preventDefault();
-
         e.stopPropagation();
 
         //calculate target element //ovako radi u svim browserima
@@ -252,8 +247,8 @@ $this->inlineScript()->appendFile($this->baseUrl('/admin/bower_components/jquery
         $('#enable-warning-dialog').modal('show');
 
     });
-    
-     //sortiranje
+
+    //sortiranje
     $('[data-action="toogle-sort"]').on('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -323,13 +318,14 @@ $this->inlineScript()->appendFile($this->baseUrl('/admin/bower_components/jquery
     saveOrderForm.find('[name="sorted_ids"]').val(serviceSortIds.join(','));
     
     //da vidimo sta smo dobili u nizu :)
-    //alert(memberSortIds);
+    //alert(serviceSortIds);
     
     //manually submit form by triggering "submit" event
     saveOrderForm.trigger('submit');
     });
 
+    
 
 
 <?php $this->inlineScript()->captureEnd(); ?>
-</script> 
+</script>    

@@ -4,6 +4,7 @@ $photoGallery = $this->photoGallery;
 $sitemapPage = $this->sitemapPage;
 $this->headTitle($sitemapPage['title']);
 $this->headMeta()->appendName('description', $sitemapPage['description']);
+$this->headLink()->appendStylesheet($this->baseUrl('/front/blueimp/css/bootstrap-image-gallery.min.css'));
 ?>
 
 <main>
@@ -32,44 +33,38 @@ $this->headMeta()->appendName('description', $sitemapPage['description']);
     </div>
 </div>
 <div id="content">
+                
     <div class="container portfolio">
-        <!--Portfolio feature item-->
-        
         <div class="row">
-            
-                <div class="col-md-5 project-photos">
-                    <!-- Slider for project pictures -->
-                    
-                    <div id="photo-gallery-slider-id" class="carousel slide">
-                        
-                        <div class="carousel-inner">
-                            <?php foreach ($photos as $index=>$photo) { ?>
-                              
-                            <div class="item <?php echo $index == 0 ? 'active' : '';?>">
-                                <img src="<?php echo $this->photoUrl($photo); ?>" alt="<?php echo $this->escape($photo['title']); ?>" />
-                                
-                            </div>
-                            <?php } ?>
-                        </div>
-                         
-                        <a class="left carousel-control" href="#photo-gallery-slider-id" data-slide="prev">&lsaquo;</a> <a class="right carousel-control" href="#photo-gallery-slider-id" data-slide="next">&rsaquo;</a> 
-
-                    </div>
-                   
-            </div>
-             
-            <div class="col-md-7 sidebar sidebar-center">
-                <!-- quick details -->
-                <div class="block">
-                    <h3 class="block-title">
-                        <span><?php echo $this->escape($photoGallery['title']); ?></span>
-                    </h3>
-                    <div class="block">
-                        <p><?php echo $this->escape($photoGallery['description']); ?></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <?php foreach ($photos as $index=>$photo) { ?>
+                 <div class="col-lg-3 col-sm-4 col-xs-6"><a title="<?php echo $this->escape($photo['title']); ?>"><img class="thumbnail img-responsive" src="<?php echo $this->photoUrl($photo); ?>"></a></div>
+             <?php } ?>
+           <hr>
+         <hr>
+       </div>
     </div>
 </div>
-                 </main>
+<div tabindex="-1" class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      <div class="modal-content">
+            <div class="modal-body">
+            </div>
+       </div>
+      </div>
+    </div>
+     </main>
+<?php $this->inlineScript()->captureStart();?>
+$(document).ready(function() {
+$('.thumbnail').click(function(){
+      $('.modal-body').empty();
+  	var title = $(this).parent('a').attr("title");
+  	$('.modal-title').html(title);
+  	$($(this).parents('div').html()).appendTo('.modal-body');
+  	$('#myModal').modal({show:true});
+});
+});
+<?php $this->inlineScript()->captureEnd();?>
+<?php $this->headStyle()->captureStart();?>
+.modal-dialog {width:600px;}
+.thumbnail {margin-bottom:6px;}
+<?php $this->headStyle()->captureEnd();?>

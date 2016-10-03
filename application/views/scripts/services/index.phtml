@@ -1,10 +1,24 @@
 <?php
 $this->headTitle('Usluge');
-?>
 
+?>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><img src="cinqueterre.jpg" class="img-circle" alt="Cinque Terre" width="304" height="236"> 
+  
+  
+  
 <main>
     
     <?php echo $this->topPhoto(); ?>
+    
+        <div class="gridView">
+            <h3 class="text-uppercase text-center"><?php echo $this->sitemapPage['title'];?></h3>
+        </div>
+    </section>
+    
     <!-- CAROUSEL -->
 <!--    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
          Indicators 
@@ -57,10 +71,14 @@ $this->headTitle('Usluge');
                 
                 <ol class="col-md-4">
                             <h3 class="title">  
-                                <i class="<?php echo $this->escape($service['icon']); ?> icon-small icon-inverse-80 _icon-circle"></i>
-                                <?php echo $this->escape($service['title']); ?>
+                                
+                                 
+                                
+                                <img src="<?= $this->frontServiceImgUrl($service);?>" class="img-circle" alt="Cinque Terre" width="304" height="236"/>
+                                <i class=" icon-small icon-inverse-80 icon-circle"></i>
+                                <?php echo $this->escape($service['service_name']); ?>
                             </h3>
-                            <p><?php echo $this->escape($service['description']); ?></p>
+                            <p><?php echo $this->escape($service['resume']); ?></p>
                         </ol>
                 
                 <?php
